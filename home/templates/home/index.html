@@ -1,27 +1,15 @@
+{% extends 'base.html' %}
+
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}">
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<div class='hometop'>
-	<h1>Malte Heckelen</h1>
-	<header class="nav">
+{% block content %}
+<img class='homepic' src='{% static "jpg/heckelen_round.jpg"%}' />
 
-		<div class="navitem">
-			<p>HOME</p>
-		</div>
-		<div class="navitem">
-			<p>CV</p>
-		</div>
-		<div class="navitem">
-			<p>BLOG</p>
-		</div>
-		<div class="navitem">
-			<p>HELP ME OUT</p>
-		</div>
-
-	</header>
-
-	<img class='homepic' src='{% static "home/jpg/heckelen_round.jpg"%}' />
+<div class='logos'>
+	<a href=''><img src='{% static "png/ustutt.png" %}' /></a>&nbsp;|&nbsp;
+	<a href=''><img src='{% static "png/linkedin.png" %}' /></a> &nbsp;|&nbsp;
+	<a href=''><img src='{% static "png/github.png" %}' /></a> &nbsp;|&nbsp;
+	<a href=''><img src='{% static "png/twitter.png" %}' /></a>
 </div>
 
 <p class='homeblurb'>
@@ -31,3 +19,4 @@ oaiwnd oasknd lkajwnoawdnaosdknaowdn aodin aoidn oaisnoawnd oajwndo asnoauefnoia
 <br>
 Laowdnmaksnc oainainfaifn aincklanweaocn aic paoskcpaowkdpaoekpiik nmsak lnakdnwakdanskdlanwlan aind kalnfeinf apo jaüsock pa oknco aksmpc aksmpamsp akmewpakfnojan ofajnfeo akndsp kawpd lampfk k npakn.<br>
 </p>
+{% endblock %}

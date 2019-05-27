@@ -1,23 +1,17 @@
 /** Media Queries: Spezifizieren ein Ausgabemedium und ein Kriterium, das abgefragt wird; hier max-width, es könnte aber auch min-width oder etwas anderes sein **/
 /** Praxis: Mehrere Media Queries in einer CSS-Datei, um möglichst viele Situationen abdecken zu können (Smartphone, Desktop-Browser, Widescreen u.a.) **/
 
-@media only screen and (max-width: 600px) {
-
-	.body{
-		background-color:pink;
-	}
+@media only screen and (max-width: 400px) {
 
 	.hometop {
 		flex-direction:row;
+		justify-content:space-between;
 	}
 
 	.homepic {
+		display:block;
 		max-width: 40%;
 		max-height: 40%;
-	}
-
-	.hometop {
-		flex-direction:row;
 	}
 
 	.nav {
@@ -52,10 +46,11 @@ body {
 
 }
 
-.hometop > h1 {
+.titlename {
 
 	font-size:8vh;
-	padding:2vw;
+	padding:3vw;
+	padding-left:2vw;
 
 }
 
@@ -101,3 +96,29 @@ body {
 	text-align:center;
 
 }
+
+.logos {
+	display:flex;
+	justify-content:center;
+	font-size:2vw;
+	vertical-align:middle;
+	color:#808080;
+}	
+
+.logos > a > img {
+	height:3vw;
+}
+
+.footer {
+	background-color:#4d4d4d;
+	font-size:2vh;
+	color:white;
+	margin-top:5vh;
+	padding:2vh;
+}
+
+.footer > a {
+	text-decoration:none;
+	color:white;
+}
+

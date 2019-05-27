@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<h1 class='titlename'>Malte Heckelen</h1>
+<div class='hometop'>
+	<header class='nav'>
+
+		<div class="navitem">
+			<p>HOME</p>
+		</div>
+		<div class="navitem">
+			<p>CV</p>
+		</div>
+		<div class="navitem">
+			<p>BLOG</p>
+		</div>
+		<div class="navitem">
+			<p>HELP ME OUT</p>
+		</div>
+
+	</header>
+</div>
+
+{% block content %}{% endblock %}
+
+<div class='footer'>
+	&#169; Malte Heckelen<br>
+	<a href=''>Impressum</a>
+</div>
