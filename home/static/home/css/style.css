@@ -1,0 +1,103 @@
+/** Media Queries: Spezifizieren ein Ausgabemedium und ein Kriterium, das abgefragt wird; hier max-width, es könnte aber auch min-width oder etwas anderes sein **/
+/** Praxis: Mehrere Media Queries in einer CSS-Datei, um möglichst viele Situationen abdecken zu können (Smartphone, Desktop-Browser, Widescreen u.a.) **/
+
+@media only screen and (max-width: 600px) {
+
+	.body{
+		background-color:pink;
+	}
+
+	.hometop {
+		flex-direction:row;
+	}
+
+	.homepic {
+		max-width: 40%;
+		max-height: 40%;
+	}
+
+	.hometop {
+		flex-direction:row;
+	}
+
+	.nav {
+
+		flex-direction:column;
+		width:40%;
+		height:40%;
+
+	}
+
+	.navitem {
+
+		width:100%;
+		padding:0px;
+		margin:0px;
+
+	}
+
+}
+
+body {
+	background-color:white;
+	font-family:'Lucida Console',sans-serif;
+	font-size:2vh;
+
+}
+
+.hometop {
+
+	display:flex;
+	flex-direction:column;
+
+}
+
+.hometop > h1 {
+
+	font-size:8vh;
+	padding:2vw;
+
+}
+
+.homepic {
+
+	display:block;
+	padding:2vh;
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+	max-width:30%;
+	max-height:30%;
+	min-width:40px;
+	min-height:40px;
+
+}
+
+.homeblurb {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width:60%;
+}
+
+.nav {
+
+	background-color:white;
+/**	padding:30px; **/
+	padding-bottom:1vh;
+	width:100%;
+	display:flex;
+}
+
+.navitem {
+
+	background-color:#01333898;
+	margin:5px;
+	padding:10px;
+	font-weight:bold;
+	font-size:3vh;
+	width:25%;
+	color:white;
+	text-align:center;
+
+}
