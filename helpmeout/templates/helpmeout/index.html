@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+{% load helpmeout_extras %}
+<a href='{% signinurl %}'>
+	<img id='donate_button' src='{% static "png/donatetoken.png" %}' />
+</a>
+{% endblock %}
