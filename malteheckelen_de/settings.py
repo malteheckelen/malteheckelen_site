@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'cv.apps.CvConfig',
     'research.apps.ResearchConfig',
     'helpmeout.apps.HelpmeoutConfig',
+    'impressum.apps.ImpressumConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

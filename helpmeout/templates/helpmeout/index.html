@@ -4,7 +4,34 @@
 
 {% block content %}
 {% load helpmeout_extras %}
-<a href='{% signinurl %}'>
-	<img id='donate_button' src='{% static "png/donatetoken.png" %}' />
-</a>
+<h3 class='homeblurb'>Help me gather data for science!</h3>
+<p class='homeblurb'><a href='/helpmeout/de'>Deutsche Version</a></p>
+<div class='homeblurb'>I am a social scientist and work at the Digital Humanities department of the University of Stuttgart. For my dissertation project, I gather Twitter data through the official Twitter API ("Advanced Programming Interface"). Such APIs have so-called rate limits that only allow a certain number of searches per time interval, usually 15 minutes. That means <i>one search per minute</i>. While it is not impossible to gather enough data with the usual rate limits, it takes <i>a lot</i> more time. Weeks and months, instead of days.<br>
+	<br>
+	Gathering data works by registering an "app" at the API that can have users. In my case, the app is just the program I wrote to interact with the API and query it for data. The more users it has, the more the rate limits loosen up. View it as a legitimization in the eyes of Twitter: The more users I have, the more legitimate my app is and the bigger the limits should be.<br>
+	<br>
+	If you have a Twitter account and want to help, click on the button below. You will be redirected to Twitter where you can give permission. Twitter will also explicitly list what my app will have access to (and also what it does not have access to).<br>
+	<br>
+	<a href='{% signinurl %}'>
+		<img id='donate_button' src='{% static "png/donatetoken.png" %}' />
+	</a>
+	<br>
+	<ul style='color:green' class='homeblurb'>
+		<br>
+		<li>My research app can only read your public information, nothing else (not even that if your account is set to protected)<br>
+		<br>
+		<li>Donation is only possible through Twitter, so the whole process is authorized and safe<br>
+		<br>
+		<li>Only summaries and anonymized information will be published (except for verified celebrity accounts). The data itself will never be published!<br>
+		<br>
+		<li>You can revoke my access at any time under "Settings > Apps and devices"<br>
+		<br>
+	</ul>
+	You would greatly help my research if you would donate an access token to me. This is the same as allowing other third-party apps access to your <b>public data</b>. This means your timeline, but nothing else. If your account is protected, your timeline cannot be collected by me, but I still get "legitimization" because you have become a user. Of course, I will not share the public data I gathered (that is in fact against the Twitter API Guidelines) and in my research I am only interested in anonymized summaries (however, I will show information if it comes from a verified account). You can revoke your donation at any time in your settings under "Apps and devices".<br>
+	<br>
+
+
+	<br>
+	<h3>Thank you for your donation!</h3>
+</div>
 {% endblock %}

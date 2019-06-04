@@ -215,7 +215,7 @@ a {
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
-	max-width:20%;
+	max-width:40%;
 }
 
 .contact {
@@ -253,4 +253,21 @@ a {
 	margin-right:auto;
 	max-width:60%;
 	margin-bottom:15px;
+}
+
+.projects {
+	display:flex;
+	flex-direction:row;
+}
+
+.float_right {
+	width:50%;
+	float:right;
+	padding:3%;
+}
+
+.float_left {
+	max-width:50%;
+	float:left;
+	padding:3%;
 }

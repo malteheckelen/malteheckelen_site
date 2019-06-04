@@ -4,3 +4,9 @@ from django.http import HttpResponse
 
 def index(request):
     return(render(request, 'helpmeout/index.html'))
+
+def index_de(request):
+    return(render(request, 'helpmeout/index.de.html'))
+
+def callback(request):
+    return(render(request, 'helpmeout/callback.html'))
