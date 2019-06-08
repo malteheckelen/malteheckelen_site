@@ -3,11 +3,17 @@
 
 @media only screen and (orientation: portrait) {
 
+	.centeredtext > .donate_button {
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+                width:70%;
+        }
+
 	body {
 		background-color:white;
 		font-family:'Helvetica';
 		font-size:10vw;
-
 	}
 	
 	.top {
@@ -16,21 +22,19 @@
 	}
 
 	.nav {
-
 		flex-direction:column;
-		width:100%;
-
 	}
 
 	.nav > a {
 		width:100%;
+		padding:0px;
+		margin:1px;
 	}
 
 	.navitem {
 		height:25%;
 		padding:0px;
 		margin:0px;
-
 	}
 
 	.titlename {
@@ -40,7 +44,7 @@
 		text-overflow:ellipsis;
 	}
 
-	.homeblurb {
+	body > .centeredtext {
 		max-width:90%;
 		min-width:90%;
 	}
@@ -143,7 +147,7 @@ a {
 
 }
 
-.homeblurb {
+.centeredtext {
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
@@ -203,7 +207,6 @@ a {
 	color:white;
 	margin-top:5vh;
 	padding:2vh;
-	width:100vw;
 }
 
 .footer > a {
@@ -211,7 +214,8 @@ a {
 	color:white;
 }
 
-#donate_button {
+
+.donate_button {
 	display:block;
 	margin-left:auto;
 	margin-right:auto;
