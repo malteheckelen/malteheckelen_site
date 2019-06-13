@@ -18,7 +18,7 @@ def signinurl():
 
     request_url = "https://api.twitter.com/oauth/request_token"
     auth_url = "https://api.twitter.com/oauth/authorize"
-    cb_url = 'https://www.ilw.uni-stuttgart.de/en/institute/team/Heckelen-00003/'
+    cb_url = 'http://malteheckelen.com/helpmeout/callback'
 
     # In this step you will need to supply your twitter provided key and secret
     twitter = OAuth1(my_key, client_secret=secret)

@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import requests
+from requests_oauthlib import OAuth1
+from urllib.parse import parse_qs
+
 #from django.template import loader
 
 def index(request):
@@ -9,4 +13,27 @@ def index_de(request):
     return(render(request, 'helpmeout/index.de.html'))
 
 def callback(request):
+    req = dict(request.GET)
+
+    my_key = 'xBYpYzZ7uuiDaapMZod660fbS'
+    secret = '9z1dxaTrRbsZRJUzIwjGMaC3LGQWP7IHy7D74zbpa3cFGNGchw'
+    oauth_verif = req['oauth_verifier'][0]
+    oauth_token = req['oauth_token'][0]
+
+    request_url = "https://api.twitter.com/oauth/access_token"
+    auth_url = "https://api.twitter.com/oauth/authorize"
+    twitter = OAuth1(my_key, client_secret=secret)
+    r = requests.post(request_url, auth=twitter, data={'oauth_token':oauth_token, 'oauth_verifier':oauth_verif})
+
+    parsed = parse_qs(r.content)
+    for key, value in parsed.items():
+        parsed[key] = [x.decode('utf-8') for x in parsed[key]]
+    oauth_token = parsed.get(b'oauth_token')[0]
+    ot_secret = parsed.get(b'oauth_token_secret')[0]
+    uid = parsed.get(b'user_id')[0]
+    sname = parsed.get(b'screen_name')[0]
+
+    context = {
+        'ot_list': [oauth_token, ot_secret, uid, sname],
+    }
     return(render(request, 'helpmeout/callback.html'))
