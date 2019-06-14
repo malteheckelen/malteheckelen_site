@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from config_file import api_config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -81,9 +82,9 @@ WSGI_APPLICATION = 'malteheckelen_de.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DJANGODBNAME', ''),
-        'USER': os.environ.get('DJANGODBUSER', ''),
-        'PASSWORD': os.environ.get('DJANGODBPASS', ''),
+        'NAME': api_config['DJANGODBNAME'],
+        'USER': api_config['DJANGODBUSER'],
+        'PASSWORD': api_config['DJANGODBPASS'],
         'HOST': 'localhost',
         'PORT': '',
     }

@@ -5,6 +5,7 @@ import psycopg2
 from requests_oauthlib import OAuth1
 from urllib.parse import parse_qs
 from helpmeout.models import AccessToken
+from config_file import api_config
 
 #from django.template import loader
 
@@ -17,8 +18,8 @@ def index_de(request):
 def callback(request):
     req = dict(request.GET)
 
-    my_key = 'xBYpYzZ7uuiDaapMZod660fbS'
-    secret = '9z1dxaTrRbsZRJUzIwjGMaC3LGQWP7IHy7D74zbpa3cFGNGchw'
+    my_key = api_config['TWAPIKEY']
+    secret = api_config['TWAPISECRET']
     oauth_verif = req['oauth_verifier'][0]
     oauth_token = req['oauth_token'][0]
 

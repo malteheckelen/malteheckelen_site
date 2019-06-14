@@ -3,18 +3,15 @@ import os
 import requests
 from requests_oauthlib import OAuth1
 from urllib.parse import parse_qs
+from config_file import api_config
 
 register = template.Library()
 
 @register.simple_tag
 def signinurl():
-    """ Step 1 of the authentication workflow, obtain a temporary
-    resource owner key and use it to redirect the user. The user
-    will authorize the client (our flask app) to access its resources
-    and perform actions in its name (aka get feed and post updates)."""
 
-    my_key = 'xBYpYzZ7uuiDaapMZod660fbS'
-    secret = '9z1dxaTrRbsZRJUzIwjGMaC3LGQWP7IHy7D74zbpa3cFGNGchw'
+    my_key = api_config['TWAPIKEY']
+    secret = api_config['TWAPISECRET']
 
     request_url = "https://api.twitter.com/oauth/request_token"
     auth_url = "https://api.twitter.com/oauth/authorize"
