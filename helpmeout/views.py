@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import requests
+import psycopg2
 from requests_oauthlib import OAuth1
 from urllib.parse import parse_qs
-import psycopg2
 from helpmeout.models import AccessToken
 
 #from django.template import loader
