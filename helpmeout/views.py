@@ -3,6 +3,8 @@ from django.http import HttpResponse
 import requests
 from requests_oauthlib import OAuth1
 from urllib.parse import parse_qs
+import psycopg2
+from helpmeout.models import AccessToken
 
 #from django.template import loader
 
@@ -28,12 +30,12 @@ def callback(request):
     parsed = parse_qs(r.content)
     for key, value in parsed.items():
         parsed[key] = [x.decode('utf-8') for x in parsed[key]]
-    oauth_token = parsed.get(b'oauth_token')[0]
-    ot_secret = parsed.get(b'oauth_token_secret')[0]
-    uid = parsed.get(b'user_id')[0]
-    sname = parsed.get(b'screen_name')[0]
+    oauth_token = str(parsed.get(b'oauth_token')[0])
+    ot_secret = str(parsed.get(b'oauth_token_secret')[0])
+    uid = str(parsed.get(b'user_id')[0])
+    sname = str(parsed.get(b'screen_name')[0])
 
-    context = {
-        'ot_list': [oauth_token, ot_secret, uid, sname],
-    }
+    hat = AccessToken(oauth_token=oauth_token, ot_secret=ot_secret, user_id=uid, screen_name=sname)
+    hat.save()
+
     return(render(request, 'helpmeout/callback.html'))

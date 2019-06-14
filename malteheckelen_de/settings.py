@@ -80,8 +80,12 @@ WSGI_APPLICATION = 'malteheckelen_de.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DJANGODBNAME', ''),
+        'USER': os.environ.get('DJANGODBUSER', ''),
+        'PASSWORD': os.environ.get('DJANGODBPASS', ''),
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
