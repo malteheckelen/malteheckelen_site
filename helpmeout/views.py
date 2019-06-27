@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.conf import settings
 import requests
 import psycopg2
 from requests_oauthlib import OAuth1
 from urllib.parse import parse_qs
 from helpmeout.models import AccessToken
-from config_file import api_config
 
 #from django.template import loader
 
@@ -18,14 +18,12 @@ def index_de(request):
 def callback(request):
     req = dict(request.GET)
 
-    my_key = api_config['TWAPIKEY']
-    secret = api_config['TWAPISECRET']
     oauth_verif = req['oauth_verifier'][0]
     oauth_token = req['oauth_token'][0]
 
     request_url = "https://api.twitter.com/oauth/access_token"
     auth_url = "https://api.twitter.com/oauth/authorize"
-    twitter = OAuth1(my_key, client_secret=secret)
+    twitter = OAuth1(settings.KEY, client_secret=settings.SECRET)
     r = requests.post(request_url, auth=twitter, data={'oauth_token':oauth_token, 'oauth_verifier':oauth_verif})
 
     parsed = parse_qs(r.content)

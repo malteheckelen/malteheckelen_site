@@ -1,24 +1,22 @@
 from django import template
+from django.conf import settings
 import os
 import requests
 from requests_oauthlib import OAuth1
 from urllib.parse import parse_qs
-from config_file import api_config
 
 register = template.Library()
 
 @register.simple_tag
 def signinurl():
 
-    my_key = api_config['TWAPIKEY']
-    secret = api_config['TWAPISECRET']
 
     request_url = "https://api.twitter.com/oauth/request_token"
     auth_url = "https://api.twitter.com/oauth/authorize"
     cb_url = 'http://malteheckelen.com/helpmeout/callback'
 
     # In this step you will need to supply your twitter provided key and secret
-    twitter = OAuth1(my_key, client_secret=secret)
+    twitter = OAuth1(settings.KEY, client_secret=settings.SECRET)
 
     # We will be using the default method of supplying parameters, which is
     # in the authorization header.

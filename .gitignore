@@ -1,4 +1,4 @@
 **/__pycache__
 mhde
 notizen.txt
-config_file.py
+*.env

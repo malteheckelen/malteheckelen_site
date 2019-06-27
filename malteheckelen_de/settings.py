@@ -11,23 +11,29 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-from config_file import api_config
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+exec(open('/var/www/utils/malteheckelen_de/ext_wsgi.py').read())
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=l@xq0y5gjcsley#zxkr7!dtq%(l#uwm8r!ghl55s=l)t1wmiy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+KEY = config('TWAPIKEY', cast=str)
+SECRET = config('TWAPISECRET', cast=str)
+DJANGODBNAME_SECRET = config('DJANGODBNAME', cast=str)
+DJANGODBUSER_SECRET = config('DJANGODBUSER', cast=str)
+DJANGODBPASS_SECRET  = config('DJANGODBPASS', cast=str)
+
+SECRET_KEY = config('SECRET_KEY')
 
 # Application definition
 
@@ -82,9 +88,9 @@ WSGI_APPLICATION = 'malteheckelen_de.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': api_config['DJANGODBNAME'],
-        'USER': api_config['DJANGODBUSER'],
-        'PASSWORD': api_config['DJANGODBPASS'],
+        'NAME': DJANGODBNAME_SECRET,
+        'USER': DJANGODBUSER_SECRET,
+        'PASSWORD': DJANGODBPASS_SECRET,
         'HOST': 'localhost',
         'PORT': '',
     }
