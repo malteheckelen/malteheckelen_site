@@ -39,6 +39,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 INSTALLED_APPS = [
     'home.apps.HomeConfig',
+    'blog.apps.BlogConfig',
     'cv.apps.CvConfig',
     'research.apps.ResearchConfig',
     'helpmeout.apps.HelpmeoutConfig',

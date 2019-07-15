@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<p class='centeredtext'>
+    <div class='box_blue_rim'>
+        <h3>{{ post.title}}</h3>
+        <i>{{ post.published_date }}</i>
+        <p>{{ post.teaser }}</p>
+        {% include post.template %}
+    </div>
+{% endblock content %}

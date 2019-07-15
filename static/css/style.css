@@ -158,7 +158,17 @@ a {
 	background-color:white;
 	padding-bottom:1vh;
 	width:100%;
+	text-align:center;
+	text-decoration:none;
 	display:flex;
+}
+
+.nav .navitem {
+	vertical-align:middle;
+}
+
+.blogpost {
+        color:black;
 }
 
 .navitem {
@@ -170,8 +180,6 @@ a {
 	font-size:3vh;
 	width:25%;
 	color:white;
-	text-align:center;
-	text-decoration:none;
 
 }
 
