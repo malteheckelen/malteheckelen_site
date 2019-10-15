@@ -2,6 +2,10 @@
 
 {% load static %}
 {% block content %}
+<div class='centeredtext'>
+<h3>Blog</h3>
+<p><i>Here you can find output from my research, tutorials (as soon as I made some) as well as more general things that interest me.</i></p>
+</div>
 <p class='centeredtext'>
     {% for post in posts %}
 	<a class='blogpost' href='{% url "detail" pk=post.pk %}'>
