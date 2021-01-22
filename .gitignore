@@ -2,3 +2,7 @@
 mhde
 notizen.txt
 *.env
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
